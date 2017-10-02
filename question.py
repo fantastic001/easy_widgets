@@ -18,7 +18,6 @@ def question(message):
         urwid.AttrMap(e, "", focus_map="focused"),
         urwid.Padding(urwid.AttrMap(urwid.Button("OK", get_answer, e), "", focus_map="focused"), align="center", left=10, right=10)
     ]
-    #return urwid.ListBox(urwid.SimpleFocusListWalker(l))
     return urwid.Pile(l)
 
 main.original_widget = question("blah")

@@ -14,7 +14,7 @@ class TextInput(Widget):
             urwid.AttrMap(e, "", focus_map="focus"),
             urwid.Padding(urwid.AttrMap(urwid.Button("OK", self.__on_submit, e), "", focus_map="focus"), align="center", left=10, right=10)
         ]
-        return urwid.Filler(urwid.Pile(l))
+        return urwid.Pile(l)
 
     def __on_submit(self, btn, edit):
         self.on_submit(edit.edit_text)

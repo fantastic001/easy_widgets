@@ -16,5 +16,5 @@ class Menu(Widget):
             button = urwid.Button(c)
             urwid.connect_signal(button, 'click', f)
             body.append(urwid.AttrMap(button, "button", focus_map='focus'))
-        return urwid.Padding(urwid.ListBox(urwid.SimpleFocusListWalker(body)), left=5, right=5)
+        return urwid.Padding(urwid.BoxAdapter(urwid.ListBox(urwid.SimpleFocusListWalker(body)), 10), left=5, right=5)
         

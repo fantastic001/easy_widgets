@@ -1,7 +1,10 @@
 
 from src import * 
 
+Application.addColor("test", "dark green", "")
 Application.init()
+
+
 
 m = Menu("Some menu")
 
@@ -16,7 +19,7 @@ menubox.addOption("exit", lambda x: 0)
 m.addOption("option 1", lambda btn: msg.exec())
 m.addOption("option 2", lambda btn: menubox.exec())
 m.addOption("option 3", lambda btn: Application.exit())
-m.addOption("option 4", lambda btn: textin.show())
+m.addOption("option 4", lambda btn: textin.show(), "test")
 m.show()
 
 

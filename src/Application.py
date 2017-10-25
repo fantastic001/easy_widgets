@@ -6,8 +6,15 @@ widget = None
 main = None
 
 
-palette = None
 
+palette = [
+    ('button', '', ''),
+    ('focus', 'white', 'light blue'),
+    ('button-reversed', 'white', 'light blue'),
+    ("dialog", "black", "light gray"),
+    ('bg', '', ''),
+]
+        
 loop = None
 parent = None
 
@@ -21,13 +28,7 @@ class Application(object):
         global loop
         widget = urwid.WidgetPlaceholder(None)
         main = urwid.Filler(urwid.Padding(widget, left=5, right=5))
-        palette = [
-            ('button', '', ''),
-            ('focus', 'white', 'light blue'),
-            ("dialog", "black", "light gray"),
-            ('bg', '', ''),
-        ]
-        
+
         loop = urwid.MainLoop(main, palette)
         parent = None
 
@@ -36,6 +37,7 @@ class Application(object):
 
     def addColor(name, fg, bg):
         palette.append((name, fg, bg))
+        palette.append((name + "-reversed", bg, fg))
 
     def setWidget(w):
         widget.original_widget = w

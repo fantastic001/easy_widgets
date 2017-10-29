@@ -5,6 +5,9 @@ Application.addColor("test", "dark green", "")
 Application.init()
 
 
+def printMe(b, s):
+    print(s)
+
 
 m = Menu("Some menu")
 
@@ -20,6 +23,15 @@ m.addOption("option 1", lambda btn: msg.exec())
 m.addOption("option 2", lambda btn: menubox.exec())
 m.addOption("option 3", lambda btn: Application.exit())
 m.addOption("option 4", lambda btn: textin.show(), "test")
+
+strings = [
+    "a",
+    "b"
+]
+
+for string in strings:
+    m.addOption("Print %s" % string, printMe, params=[string])
+
 m.show()
 
 

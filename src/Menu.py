@@ -14,7 +14,7 @@ class Menu(Widget):
         for o in self.options:
             c, f, color, params = o
             button = urwid.Button(c)
-            urwid.connect_signal(button, 'click', f, *params)
+            urwid.connect_signal(button, 'click', f, params)
             body.append(urwid.AttrMap(button, color, focus_map=color + "-reversed"))
         return urwid.Padding(urwid.BoxAdapter(urwid.ListBox(urwid.SimpleFocusListWalker(body)), 10), left=5, right=5)
         

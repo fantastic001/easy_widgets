@@ -11,7 +11,7 @@ class MenuBox(Dialog):
     def addOption(self, description, func, params=[]):
         def f(b):
             self.exit()
-            func(b, *params)
+            func(b, params)
         self.options.append((description, f, params))
     
     def getDialog(self):
